@@ -5,6 +5,13 @@
     user:
       name: toxico
       state: absent
+      
+- hosts: haproxycentos
+  tasks:
+  - name: frenar haproxy en el balanceador
+    systemd:
+      name: haproxy.service
+      state: stopped
 
 - hosts: webservers
   tasks:
@@ -16,11 +23,3 @@
       service: http
       permanent: yes
       state: disabled
-      
- 
-- hosts: haproxycentos
-  tasks:
-  - name: frenar haproxy en el balanceador
-    systemd:
-      name: haproxy.service
-      state: stopped
