@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  tasks:
+  - name: instalacion httpd
+    package: 
+      name: httpd
+      state: present
+  
+  
