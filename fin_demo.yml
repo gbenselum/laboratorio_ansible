@@ -13,13 +13,3 @@
       name: haproxy.service
       state: stopped
 
-- hosts: webservers
-  tasks:
-  - name: desinstala httpd y quita regla del fw
-    package:
-      name: httpd
-      state: absent
-    firewalld:
-      service: http
-      permanent: yes
-      state: disabled
