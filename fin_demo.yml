@@ -19,3 +19,11 @@
     package:
       name: httpd
       state: absent
+    
+    
+- hosts: Linux
+  tasks:
+  - name: instala nmap
+    package:
+    name: nmap
+    state: present
