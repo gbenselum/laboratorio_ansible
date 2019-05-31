@@ -20,17 +20,16 @@
       name: httpd
       state: absent
     
-    
-- hosts: Linux
-  tasks:
-  - name: instala nmap
-    package:
-    name: nmap
-    state: present
-    
 - hosts: RHEL
   tasks:
   - name: poner SElinux en permissive
     selinux:
       policy: targetted
       state: permissive
+      
+- hosts: Linux
+  tasks:
+  - name: isnstala nmap
+    package:
+      name: nmap
+      state: present
