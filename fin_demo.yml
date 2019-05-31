@@ -1,6 +1,4 @@
-
-
-# borra el usuario toxico en caso de existir
+---
 - hosts: Linux
   tasks:
   - name: elimina el usuario toxico
