@@ -13,3 +13,9 @@
       name: haproxy.service
       state: stopped
 
+- hosts: webservers
+  tasks:
+  - name: desinstala Httpd
+    package:
+      name: httpd
+      state: absent
