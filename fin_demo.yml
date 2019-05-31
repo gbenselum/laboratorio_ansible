@@ -24,7 +24,7 @@
   tasks:
   - name: poner SElinux en permissive
     selinux:
-      policy: targetted
+      policy: targeted
       state: permissive
       
 - hosts: Linux
