@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ var_Linux }}"
+- hosts: Linux
   tasks:
   - name: Eliminar usuario {{ user_delete }}
     user:
