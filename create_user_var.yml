@@ -1,0 +1,9 @@
+---
+- hosts: Linux
+  tasks:
+  - name: Crear el usuario '{{ user_create }}' con Uid uid 1040
+    user:
+      name: "{{ user_create }}"
+      comment: el usuario toxico ha vuelto
+      uid: 1040
+
