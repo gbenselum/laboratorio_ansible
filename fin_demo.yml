@@ -20,7 +20,7 @@
  
 - hosts: haproxycentos
   tasks:
- - name: frenar haproxy en balanceador
+  - name: frenar haproxy en el balanceador
     systemd:
-      state: stopped
       name: haproxy.service
+      state: stopped
