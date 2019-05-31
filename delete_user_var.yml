@@ -3,6 +3,6 @@
   tasks:
   - name: Eliminar usuario {{ user_delete }}
     user:
-      name: {{ user_delete }}
+      name: "{{ user_delete }}"
       state: absent
       remove: yes
