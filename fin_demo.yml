@@ -3,7 +3,14 @@
 # borra el usuario toxico en caso de existir
 - hosts: Linux
   tasks:
-  - name: Crear el usuario 'toxico' con Uid uid 1040
+  - name: elimina el usuario toxico
     user:
       name: toxico
       state: absent
+
+- hosts: webservers
+  tasks:
+  - name: desinstala httpd
+    package:
+      name:httpd
+      state:absent
