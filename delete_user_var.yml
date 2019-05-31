@@ -3,6 +3,6 @@
   tasks:
   - name: Eliminar usuario {{ user_delete }}
     user:
-      name: {{ user_delete }}
+      name: toxico
       state: absent
       remove: yes
