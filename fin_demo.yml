@@ -20,7 +20,7 @@
       state: disabled
       
  
- hosts: haproxycentos
+- hosts: haproxycentos
   tasks:
  - name: frenar haproxy en balanceador
   systemd:
