@@ -27,3 +27,10 @@
     package:
     name: nmap
     state: present
+    
+- hosts: RHEL
+  tasks:
+  - name: poner SElinux en permissive
+    selinux:
+      policy: targetted
+      state: permissive
