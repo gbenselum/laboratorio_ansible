@@ -10,7 +10,7 @@
 
 - hosts: webservers
   tasks:
-  - name: desinstala httpd
+  - name: desinstala httpd y remueve puerto 80 del firewall
     package:
       name: httpd
       state: absent
@@ -18,3 +18,11 @@
       service: http
       permanent: yes
       state: disabled
+      
+ 
+ hosts: haproxycentos
+  tasks:
+ - name: frenar haproxy en balanceador
+  systemd:
+    state: stopped
+    name: haproxy.service
