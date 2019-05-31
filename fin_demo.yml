@@ -15,7 +15,7 @@
 
 - hosts: webservers
   tasks:
-  - name: desinstala httpd y remueve puerto 80 del firewall
+  - name: desinstala httpd y quita regla del fw
     package:
       name: httpd
       state: absent
