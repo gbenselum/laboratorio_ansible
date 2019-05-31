@@ -14,3 +14,7 @@
     package:
       name: httpd
       state: absent
+    firewalld:
+      service: http
+      permanent: yes
+      state: disabled
