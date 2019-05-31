@@ -12,5 +12,5 @@
   tasks:
   - name: desinstala httpd
     package:
-      name:httpd
-      state:absent
+      name: httpd
+      state: absent
