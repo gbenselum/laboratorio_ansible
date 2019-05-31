@@ -1,0 +1,9 @@
+
+
+# borra el usuario toxico en caso de existir
+- hosts: Linux
+  tasks:
+  - name: Crear el usuario 'toxico' con Uid uid 1040
+    user:
+      name: toxico
+      state: absent
