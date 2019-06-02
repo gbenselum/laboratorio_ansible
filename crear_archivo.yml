@@ -1,7 +1,7 @@
 ---
 - hosts: Linux
   tasks:
-      - name: Create file
+      - name: Crea archivo desde variable definida en Survey en /tmp
         file:
             path: /tmp/{{ var_file }}
             state: touch
