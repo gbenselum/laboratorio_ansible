@@ -1,0 +1,25 @@
+---
+# hardening para el ambiente laboratorio demo
+
+- hosts: Linux
+  task: 
+    name: Se remueve GCC en servidores grupo Linux
+    package:
+      name: gcc
+      state: absent
+
+- hosts: Linux
+  task:
+    name: Se remueve nmap en todos los servidores Linux
+      name: nmap
+      state: absent
+
+
+- hosts: RHEL
+  tasks: 
+    name: Se define estado hardened para SElinux en grupo RHEL
+    selinux:
+      policy: targeted
+      state: enforcing
+
+
