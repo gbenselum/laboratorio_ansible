@@ -1,0 +1,8 @@
+---
+- hosts: haproxycentos
+  tasks:
+  - name: iniciar haproxy en el balanceador
+    systemd:
+      name: haproxy.service
+      state: started
+...
