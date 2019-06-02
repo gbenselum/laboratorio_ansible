@@ -1,13 +1,10 @@
 ---
-# hardening para el ambiente laboratorio demo
-
 - hosts: Linux
-  tasks: 
-    name: Se remueve GCC en servidores grupo Linux
-    package:
-      name: gcc
-      state: absent
-
+  tasks:
+    name: desinstalar gcc a traves de package a todos los linux
+      package:
+        name: gcc
+        state: absent
 
 - hosts: RHEL
   tasks: 
