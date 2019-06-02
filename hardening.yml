@@ -11,8 +11,9 @@
 - hosts: Linux
   task:
     name: Se remueve nmap en todos los servidores Linux
-      name: nmap
-      state: absent
+      package:
+        name: nmap
+        state: absent
 
 
 - hosts: RHEL
