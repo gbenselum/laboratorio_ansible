@@ -8,13 +8,6 @@
       name: gcc
       state: absent
 
-- hosts: Linux
-  task:
-    name: Se remueve nmap en todos los servidores Linux
-      package:
-        name: nmap
-        state: absent
-
 
 - hosts: RHEL
   tasks: 
@@ -23,4 +16,12 @@
       policy: targeted
       state: enforcing
 
+
+
+#- hosts: Linux
+#  task:
+#    name: Se remueve nmap en todos los servidores Linux
+#      package:
+##        name: nmap
+#        state: absent
 
