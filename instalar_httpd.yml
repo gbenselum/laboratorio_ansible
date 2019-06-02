@@ -1,9 +1,9 @@
 ---
 - hosts: webservers
   tasks:
-  - name: instalacion httpd
+  - name: Instalar httpd
     package: 
       name: httpd
       state: present
-  
-  
+#  - Nota: En Debian el pkg se llama diferente
+...
