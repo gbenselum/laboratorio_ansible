@@ -6,6 +6,15 @@
       policy: targeted
       state: enforcing
 
+- hosts: RHEL
+  tasks:
+    - name: definir estado hardenerd para selinux en hosts RHEL
+        selinux:
+            policy: targeted
+            state: enforcing
+
+
+
 #- hosts: Linux
 #  tasks:
 #    name: desinstalar gcc a traves de package a todos los linux
