@@ -2,7 +2,7 @@
 # hardening para el ambiente laboratorio demo
 
 - hosts: Linux
-  task: 
+  tasks: 
     name: Se remueve GCC en servidores grupo Linux
     package:
       name: gcc
@@ -18,10 +18,10 @@
 
 
 
-#- hosts: Linux
-#  task:
-#    name: Se remueve nmap en todos los servidores Linux
-#      package:
-##        name: nmap
-#        state: absent
-
+- hosts: Linux
+  tasks:
+    name: Se remueve nmap en todos los servidores Linux
+      package:
+        name: nmap
+        state: absent
+...
