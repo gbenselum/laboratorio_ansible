@@ -5,5 +5,16 @@
     package: 
       name: httpd
       state: present
-#  - Nota: En Debian el pkg se llama diferente
+
+- name: permitir trafico www en firewalld
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+      
+ - name: reiniciar firewalld para tomar reglas
+  service:
+    name: firewalld
+    state: restarted
+ 
 ...
