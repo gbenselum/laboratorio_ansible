@@ -1,10 +1,4 @@
----
-- hosts: RHEL
-  tasks: 
-    name: Se define estado hardened para SElinux en grupo RHEL
-    selinux:
-      policy: targeted
-      state: enforcing
+
 
 - hosts: RHEL
   tasks:
