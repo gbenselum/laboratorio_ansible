@@ -16,7 +16,7 @@
 - hosts: webservers
   tasks:
   - name: desinstala Httpd
-    yum:
+    dnf:
       name: httpd
       state: absent
     
