@@ -1,18 +1,18 @@
 ---
 - hosts: haproxycentos
-  tasks:
-  - name: iniciar haproxy en el balanceador
-    systemd:
-      name: haproxy.service
-      state: started
+    tasks:
+    - name: iniciar haproxy en el balanceador
+        systemd:
+          name: haproxy.service
+          state: started
       
 - hosts: haproxycentos
   tasks:
   - name: habilitar puerto 80 en el firewalld
     firewalld:
-    service: http
-    permanent: yes
-    state: enabled
+      service: http
+      permanent: yes
+      state: enabled
 - hosts: haproxycentos
   tasks:
   - name: reiniciar firewalld para tomar cambios
