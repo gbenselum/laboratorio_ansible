@@ -1,10 +1,10 @@
 ---
 - hosts: RHEL
   tasks:
-    name: Se valida estado de SELINUX
-      selinux:
-        policy: targeted
-        state: enforcing
+  - name: Se valida estado de SELINUX
+    selinux:
+      policy: targeted
+      state: enforcing
 #- hosts: RHEL
 #  tasks:
 ##  name: definir estado hardenerd para selinux en hosts RHEL
