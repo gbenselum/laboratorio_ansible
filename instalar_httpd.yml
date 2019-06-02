@@ -16,5 +16,10 @@
     service:
       name: firewalld
       state: restarted
+   
+   - name: iniciar servicio httpd
+     service:
+       name: httpd
+       state: started
  
 ...
