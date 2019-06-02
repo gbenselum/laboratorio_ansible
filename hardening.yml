@@ -1,11 +1,4 @@
 ---
-- hosts: Linux
-  tasks:
-    name: desinstalar gcc a traves de package a todos los linux
-      package:
-        name: gcc
-        state: absent
-
 - hosts: RHEL
   tasks: 
     name: Se define estado hardened para SElinux en grupo RHEL
@@ -13,6 +6,12 @@
       policy: targeted
       state: enforcing
 
+#- hosts: Linux
+#  tasks:
+#    name: desinstalar gcc a traves de package a todos los linux
+#      package:
+#        name: gcc
+#        state: absent
 
 
 #- hosts: Linux
