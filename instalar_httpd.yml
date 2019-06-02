@@ -6,15 +6,15 @@
       name: httpd
       state: present
 
-- name: permitir trafico www en firewalld
+  - name: permitir trafico www en firewalld
     firewalld:
       service: http
       permanent: yes
       state: enabled
       
- - name: reiniciar firewalld para tomar reglas
-  service:
-    name: firewalld
-    state: restarted
+  - name: reiniciar firewalld para tomar reglas
+    service:
+      name: firewalld
+      state: restarted
  
 ...
