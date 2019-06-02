@@ -2,7 +2,7 @@
 - hosts: RHEL
   tasks:
     name: Se valida estado de SELINUX
-    - selinux:
+      selinux:
         policy: targeted
         state: enforcing
 #- hosts: RHEL
