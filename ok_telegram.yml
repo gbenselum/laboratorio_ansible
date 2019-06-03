@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+      - name: crea aviso de tarea finalizada en /tmp/
+        file:
+            path: /tmp/finaliza_ok
+            state: touch
+
+
+
+      - name: send a message to chat in playbook
+        telegram:
+          token: '789814150:AAE86c3jBVW5v2EQ2uEIZhZ_vxKIIhYXt0U'
+          chat_id: 519410943
+          msg: Tarea Ansible Finalizada Satisfactoriamente
