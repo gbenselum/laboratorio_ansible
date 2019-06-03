@@ -12,14 +12,12 @@
     ufw:
       state: enabled
 
-
-#- hosts: RHEL
-#  tasks:
-##  name: definir estado hardenerd para selinux en hosts RHEL
-#    selinux:
-#      policy: targeted
-#      state: enforcing
-
+- hosts: Linux
+  tasks:
+    name: Se remueve nmap en todos los servidores Linux
+      package:
+        name: nmap
+        state: absent
 
 
 #- hosts: Linux
