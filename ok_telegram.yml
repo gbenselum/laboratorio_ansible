@@ -8,8 +8,8 @@
 
 
 
-      - name: send a message to chat in playbook
+      - name: enviar mensaje via Telegram
         telegram:
           token: '789814150:AAE86c3jBVW5v2EQ2uEIZhZ_vxKIIhYXt0U'
           chat_id: 519410943
-          msg: Tarea Ansible Finalizada Satisfactoriamente
+          msg: Tarea Ansible Finalizada Satisfactoriamente el {{ansible_date_time.date}} por {{ ansible_user_id }} 
