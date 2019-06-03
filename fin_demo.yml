@@ -33,4 +33,10 @@
     package:
       name: nmap
       state: present
+      
+- hosts: debian
+  tasks:
+  - name: setea ufw en disabled
+    ufw:
+      state: disabled      
 ...
