@@ -4,7 +4,7 @@
   tasks:
       - name: crea aviso de error en /tmp/
         file:
-            path: /tmp/fallo
+            path: /tmp/fallo_ansible_{{ansible_date_time.date}}.log
             state: touch
 
 
