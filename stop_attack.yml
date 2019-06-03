@@ -1,0 +1,7 @@
+---
+- hosts: debian
+  gather_facts: no
+  tasks:
+    - name: se bloquea desde variable la IP "{var_ipadd}"
+      ufw:
+        *****************************************
