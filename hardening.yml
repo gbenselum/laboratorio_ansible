@@ -12,13 +12,13 @@
     ufw:
       state: enabled
 
+       
 - hosts: Linux
   tasks:
-    name: Se remueve nmap en todos los servidores Linux
-      package:
-        name: nmap
-        state: absent
-
+  - name: Se remueve nmap en todos los servidores Linux
+    package: 
+      name: nmap
+      state: absent
 
 #- hosts: Linux
 #  tasks:
