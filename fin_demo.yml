@@ -1,12 +1,15 @@
 ---
 - hosts: Linux
+  gather_facts: no
   tasks:
+  
   - name: elimina el usuario toxico
     user:
       name: toxico
       state: absent
       
 - hosts: haproxycentos
+  gather_facts: no
   tasks:
   - name: frenar haproxy en el balanceador
     systemd:
@@ -14,6 +17,7 @@
       state: stopped
 
 - hosts: webservers
+  gather_facts: no
   tasks:
   - name: desinstala Httpd
     dnf:
@@ -21,6 +25,7 @@
       state: absent
     
 - hosts: RHEL
+  gather_facts: no
   tasks:
   - name: poner SElinux en permissive
     selinux:
@@ -28,6 +33,7 @@
       state: permissive
       
 - hosts: Linux
+  gather_facts: no
   tasks:
   - name: instala nmap
     package:
@@ -35,6 +41,7 @@
       state: present
       
 - hosts: debian
+  gather_facts: no
   tasks:
   - name: setea ufw en disabled
     ufw:
