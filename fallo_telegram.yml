@@ -1,5 +1,7 @@
+---
 - name: enviar mensaje a grupo telegram
   telegram:
     token: '789814150:AAE86c3jBVW5v2EQ2uEIZhZ_vxKIIhYXt0U'
     chat_id: 338062584
     msg: Tarea Ansible fallo
+...
