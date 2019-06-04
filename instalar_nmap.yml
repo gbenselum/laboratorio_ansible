@@ -1,0 +1,7 @@
+---
+- hosts: nmap
+  tasks:
+  - name: Instalar nmap
+    package: 
+      name: nmap
+      state: present
