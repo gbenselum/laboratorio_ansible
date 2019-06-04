@@ -1,5 +1,5 @@
 ---
-- hosts: nmap
+- hosts: Linux
   tasks:
   - name: Instalar nmap
     package: 
