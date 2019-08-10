@@ -1,14 +1,19 @@
 ---
+- hosts: haproxycentos1
+  tasks:
+  - name: Instalar haproxy en el Host
+    package:
+       name: haproxy
+       state: present
 
-
-- hosts: haproxycentos
+- hosts: haproxycentos1
   tasks:
   - name: iniciar haproxy en el balanceador
     systemd:
        name: haproxy.service
        state: started
       
-- hosts: haproxycentos
+- hosts: haproxycentos1
   tasks:
   - name: habilitar puerto 80 en el firewalld
     firewalld:
@@ -16,7 +21,7 @@
       permanent: yes
       state: enabled
       
-- hosts: haproxycentos
+- hosts: haproxycentos1
   tasks:
   - name: reiniciar firewalld para tomar cambios
     service:
