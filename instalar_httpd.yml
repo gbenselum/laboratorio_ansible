@@ -2,7 +2,7 @@
 - hosts: webservers
   tasks:
   - name: Instalar httpd
-    yum: 
+    package: 
       name: httpd
       state: present
 
