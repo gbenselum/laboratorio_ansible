@@ -1,5 +1,5 @@
 ---
-- hosts: RHEL
+- hosts: CENTOS
   gather_facts: no
   tasks:
   - name: Se define estado de SELINUX en enforcing
@@ -7,14 +7,6 @@
       policy: targeted
       state: enforcing
 
-- hosts: debian
-  gather_facts: no
-  tasks:
-  - name: Se define estado de UFW en Enabled
-    ufw:
-      state: enabled
-
-       
 - hosts: Linux
   gather_facts: no
   tasks:
