@@ -24,7 +24,7 @@
       name: httpd
       state: absent
     
-- hosts: RHEL
+- hosts: CENTOS
   gather_facts: no
   tasks:
   - name: poner SElinux en permissive
