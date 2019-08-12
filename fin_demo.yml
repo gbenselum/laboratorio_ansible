@@ -8,7 +8,7 @@
       name: toxico
       state: absent
       
-- hosts: haproxycentos
+- hosts: haproxycentos1
   gather_facts: no
   tasks:
   - name: frenar haproxy en el balanceador
