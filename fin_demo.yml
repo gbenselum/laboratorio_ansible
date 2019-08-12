@@ -40,10 +40,10 @@
       name: nmap
       state: present
       
-- hosts: debian
-  gather_facts: no
-  tasks:
-  - name: setea ufw en disabled
-    ufw:
-      state: disabled      
+#- hosts: debian
+#  gather_facts: no
+#  tasks:
+#  - name: setea ufw en disabled
+#    ufw:
+#      state: disabled      
 ...
