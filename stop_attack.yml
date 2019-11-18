@@ -4,4 +4,7 @@
   tasks:
     - name: se bloquea desde variable la IP "{var_ipadd}"
       ufw:
-        *****************************************
+        rule: deny
+        proto: all
+        src: {var_ipadd}
+        comment: bloqueo IP {var_ipadd} definido por regla ansible
