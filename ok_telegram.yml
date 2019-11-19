@@ -1,11 +1,11 @@
 ---
 - hosts: localhost
   tasks:
-      - name: crea aviso de tarea finalizada en /tmp/
-        file:
-            path: /tmp/finaliza_ok
-            state: touch
-
+      - name: crea aviso de tarea finalizada en /tmp/log_ansible 
+        lineinfile:
+            path: /tmp/log_ansible
+            line: Tarea Ansible Finalizada Satisfactoriamente el {{ansible_date_time.date}} por {{ ansible_user }}
+            create: yes
 
 
       - name: enviar mensaje via Telegram
