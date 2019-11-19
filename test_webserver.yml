@@ -5,12 +5,12 @@
         uri:
             url: http://minioncentos1
 
-- hosts: minionfedora1
+- hosts: Minionfedora1
   gather_facts: no
   tasks:
       - name: prueba server fedora
         uri:
-            url: http://minionfedora1
+            url: http://Minionfedora1
 
 - hosts: haproxycentos1
   gather_facts: no
