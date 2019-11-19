@@ -1,0 +1,16 @@
+- hosts: webservers
+  tasks:
+      - name: prueba server centos
+        uri:
+            url: http://minioncentos1
+            
+      - name: prueba server fedora
+        uri:
+            url: http://minionfedora1
+
+      - name: prueba haproxy
+        uri:
+            url: http://haproxycentos1
+
+
+
