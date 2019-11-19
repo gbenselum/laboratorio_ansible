@@ -3,7 +3,7 @@
   tasks:
       - name: crea aviso de tarea finalizada en /tmp/log_ansible 
         lineinfile:
-            path: /tmp/log_ansible
+            path: /home/gabriel/log_ansible
             line: Tarea Ansible Finalizada Satisfactoriamente el {{ansible_date_time.date}} por {{ ansible_user }}
             create: yes
 
