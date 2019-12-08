@@ -12,7 +12,14 @@
   - name: consulta hostname
     shell: "uname -a  |  awk '{print $2}' "
     register: hostname_ver
+
+
+
+  - name: release redhat
+    shell: "cat /etc/redhat-release"
+    register: redhat_ver
     
+
   - debug: 
-     msg: " el host {{ hostname_ver.stdout }} tiene el kernel {{ kernel_ver.stdout }} "
+     msg: " el host fqn {{ hostname_ver.stdout }} tiene el kernel {{ kernel_ver.stdout }} y es {{ redhat_ver.stdout }}"
 ...
