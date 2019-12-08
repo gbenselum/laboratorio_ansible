@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  
+  - name: consulta kernel
+    shell: "uname -a  |  awk '{print $2}' "
+    register: hostname
+#
+#  - debub: 
+#     msg: {{ hostname }}
+...
