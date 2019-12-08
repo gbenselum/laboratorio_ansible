@@ -7,6 +7,6 @@
     shell: "uname -a  |  awk '{print $2}' "
     register: kernel_ver
     
-  - debub: 
+  - debug: 
      msg: " {{ kernel_ver.stdout }} "
 ...
