@@ -14,5 +14,5 @@
     register: hostname_ver
     
   - debug: 
-     msg: " el host {{ kernel_ver.stdout }} tiene el kernel {{ kernel_ver.stdout }} "
+     msg: " el host {{ hostname_ver.stdout }} tiene el kernel {{ kernel_ver.stdout }} "
 ...
