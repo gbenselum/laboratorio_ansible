@@ -4,9 +4,15 @@
   tasks:
   
   - name: consulta kernel
-    shell: "uname -a  |  awk '{print $2}' "
+    shell: "uname -a  |  awk '{print $3}' "
     register: kernel_ver
     
+
+
+  - name: consulta hostname
+    shell: "uname -a  |  awk '{print $2}' "
+    register: hostname_ver
+    
   - debug: 
-     msg: " {{ kernel_ver.stdout }} "
+     msg: " el host {{ kernel_ver.stdout }} tiene el kernel {{ kernel_ver.stdout }} "
 ...
