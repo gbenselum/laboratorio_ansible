@@ -6,5 +6,5 @@
 
   tasks:
   - name: correr apagado
-    command: /sbin/shutdown -h now
+    command: 'shutdown -h now'
     ignore_errors: yes
