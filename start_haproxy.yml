@@ -1,5 +1,5 @@
 ---
-- name: Clonar el repo
+- name: clonar el repo a local
   git:
     repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
     dest: /home/gabriel/repo
