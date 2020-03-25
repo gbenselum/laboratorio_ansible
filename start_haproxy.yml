@@ -10,7 +10,7 @@
       dest: /home/awx/repo
       clone: yes
 
-- hosts: haproxycentos
+- hosts: haproxycentos1
   gather_facts: no
   become: yes
   tasks:
