@@ -12,6 +12,7 @@
 
 - hosts: localhost
   gather_facts: no
+  become: yes
   tasks:
     - name: Copy file with owner and permissions
       copy:
