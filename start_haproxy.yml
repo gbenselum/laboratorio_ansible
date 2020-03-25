@@ -17,7 +17,7 @@
     - name: Copy file with owner and permissions
       copy:
         src: /home/awx/repo/haproxy.cfg
-        dest: /etc/haproxy.conf
+        dest: /etc/haproxy/haproxy.conf
         owner: root
         group: root
         mode: '0644'
