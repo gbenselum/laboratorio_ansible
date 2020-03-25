@@ -2,6 +2,7 @@
     
 
 - hosts: localhost
+  gather_facts: no
   tasks:
   - name: clonar el repo a local
     git:
@@ -10,6 +11,7 @@
       clone: yes
 
 - hosts: localhost
+  gather_facts: no
   tasks:
     - name: Copy file with owner and permissions
       copy:
@@ -28,27 +30,21 @@
        name: haproxy
        state: present
 
-- hosts: haproxycentos1
-  tasks:
+
   - name: iniciar servicio haproxy
     systemd:
        name: haproxy.service
        state: started
       
-- hosts: haproxycentos1
-  tasks:
   - name: habilitar puerto 80 en el firewalld
     firewalld:
       service: http
       permanent: yes
       state: enabled
       
-- hosts: haproxycentos1
-  tasks:
   - name: reiniciar firewalld para tomar cambios
     service:
       name: firewalld
       state: restarted
-
 
 ...
