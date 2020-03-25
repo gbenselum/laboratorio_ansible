@@ -1,4 +1,22 @@
 ---
+- name: Clonar el repo
+  git:
+    repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
+    dest: /home/gabriel/repo
+    clone: yes
+    
+
+
+- name: Copy file with owner and permissions
+  copy:
+    src: /home/gabriel/repo/haproxy.cfg
+    dest: /etc/haproxy.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+
+
 - hosts: haproxycentos1
   tasks:
   - name: Instalar haproxy en el Host
@@ -8,7 +26,7 @@
 
 - hosts: haproxycentos1
   tasks:
-  - name: iniciar haproxy en el balanceador
+  - name: iniciar servicio haproxy
     systemd:
        name: haproxy.service
        state: started
@@ -27,4 +45,15 @@
     service:
       name: firewalld
       state: restarted
+
+- name: Copy file with owner and permissions
+  copy:
+    src: /var/lib/awx/projects/_6__github_lab_test_drive/haproxy.cfg
+    dest: /etc/foo.conf
+    owner: foo
+    group: foo
+    mode: '0644'
+
+
+
 ...
