@@ -22,8 +22,8 @@
         mode: '0644'
 
 
-
 - hosts: haproxycentos1
+  gather_facts: no
   tasks:
   - name: Instalar haproxy en el Host
     package:
@@ -37,6 +37,7 @@
        state: started
       
   - name: habilitar puerto 80 en el firewalld
+    
     firewalld:
       service: http
       permanent: yes
