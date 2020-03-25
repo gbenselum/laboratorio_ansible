@@ -6,14 +6,14 @@
   - name: clonar el repo a local
     git:
       repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
-      dest: /home/gabriel/repo
+      dest: /var/lib/awx/projects/repo
       clone: yes
 
 - hosts: localhost
   tasks:
     - name: Copy file with owner and permissions
       copy:
-        src: /home/gabriel/repo/haproxy.cfg
+        src: /home/gabriel/repo/laboratorio_ansible/haproxy.cfg
         dest: /etc/haproxy.conf
         owner: root
         group: root
