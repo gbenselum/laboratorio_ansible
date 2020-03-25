@@ -15,7 +15,7 @@
   tasks:
     - name: Copy file with owner and permissions
       copy:
-        src: /home/awx/repo/laboratorio_ansible/haproxy.cfg
+        src: /home/awx/repo/haproxy.cfg
         dest: /etc/haproxy.conf
         owner: root
         group: root
