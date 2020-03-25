@@ -5,6 +5,4 @@
        msg: "server {{ ansible_hostname }} {{ ansible_all_ipv4_addresses }}:80 check" 
      register: nombreprueba
  
-- name: imprimir 
-  debug:
-    var: nombreprueba
+   
