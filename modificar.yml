@@ -3,11 +3,11 @@
    - name: crear linea en haproxy
      debug:
        msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-     register: nombreprueba
+     register: thor
      
 - hosts: localhost
   tasks:
    - name: imprimir en archivo
      lineinfile:
        path: /home/awx/new.webserver
-       line: "{{ nombreprueba.stdout_lines }}"
+       line: "{{ thor }}"
