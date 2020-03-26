@@ -9,4 +9,4 @@
   tasks:
    - name: imprimir
      debug: 
-      msg: {{ nombreprueba.stdout }}
+      msg: "{{ nombreprueba.stdout }}"
