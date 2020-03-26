@@ -8,5 +8,5 @@
 - hosts: localhost
   tasks:
    - name: imprimir
-     debug: nombreprueba
-       msg: "{{ nombreprueba.[webservers}}}"
+     debug: 
+      msg: {{ nombreprueba.stdout }}
