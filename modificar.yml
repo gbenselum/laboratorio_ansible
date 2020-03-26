@@ -2,7 +2,7 @@
   tasks:
    - name: crear linea en haproxy
      debug:
-       msg: "server {{ ansible_hostname }} {{ ansible_eth0.ipv4.address }} :80 check" 
+       msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }} :80 check" 
      register: nombreprueba
  
    
