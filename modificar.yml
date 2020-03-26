@@ -7,7 +7,7 @@
     register: thor
   
   
-- hosts: webservers
+- hosts: localhost
   tasks:
   - name: crear linea en haproxy
     debug:
