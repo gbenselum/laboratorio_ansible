@@ -1,20 +1,33 @@
-
+#llamo a los webservers para tener el setup, sino no me responden a los hostvars
 - hosts: webservers
   tasks:
   - name: crear linea en haproxy
     debug:
       msg: "saludame cabron"
       
+# Version 1 hace lo que quiero pero no sirve
+# versión original que no funciona porque register no permite guardar el string para usar con otro host
+#- hosts: webservers
+#  tasks:
+#  - name: crear linea en haproxy
+#    debug:
+#      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
+#    register: thor
+
+   
+# version 2 hace lo que quiero, pero con un HOST, falta el loop
 - hosts: localhost
   tasks:
-  - name: probar si sale
+  - name: proba ssi sale
     debug:
-      msg: "{{ hostvars['webservers'].ansible_hostname }}"
-
+      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
       
       
-      #['ansible_default_ipv4.network']}}:80 check"
-
+# el loop deberia ser algo asi, pero tampoco anda
+- hosts: webservers
+  tasks:
+  - name: pruebo una vez mas
+    msg: "{% for host in groups.webservers %} {{ hostvars['host.webserver']['ansible_hostname']}} {% endfor %}"
 
 
 #- hosts: webservers
@@ -23,3 +36,6 @@
 #    debug:
 #      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
 #    register: thor
+
+
+
