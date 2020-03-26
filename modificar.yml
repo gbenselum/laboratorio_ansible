@@ -1,17 +1,8 @@
+ 
 - hosts: webservers
-  tasks:
-  
-   - name: crear linea en haproxy
-     setup:
-       gather_subset: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-       register: thor
-
-
-   
- #- hosts: webservers
- # tasks:
- #  - name: crear linea en haproxy
- #    debug:
- #      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
- #      register: thor
+ tasks:
+  - name: crear linea en haproxy
+    debug:
+      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
+      register: thor
    
