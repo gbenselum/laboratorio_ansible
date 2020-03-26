@@ -1,8 +1,9 @@
+
 - host: localhost
   tasks:
   - name: probar si sale
     debug:
-      msg: "{{ hostvars[webservers]['ansible_hostname']['ansible_default_ipv4.network']}:80 check"
+      msg: "{{ hostvars[MinionCentos1]['ansible_hostname']['ansible_default_ipv4.network']}:80 check"
 
 
 
