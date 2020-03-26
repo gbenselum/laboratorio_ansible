@@ -6,6 +6,9 @@
       msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
     register: thor
   
+  
+- hosts: webservers
+  tasks:
   - name: crear linea en haproxy
     debug:
       msg: "{{ thor }}" 
