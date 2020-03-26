@@ -2,9 +2,17 @@
   tasks:
    - name: crear linea en haproxy
      debug:
-       var: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
+       msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
        register: thor
  
+ 
+ - hosts: localhost
+  tasks:
+   - name: imprimir
+     debug:
+       var: thor
+   
+   
  #- hosts: webservers
  # tasks:
  #  - name: crear linea en haproxy
