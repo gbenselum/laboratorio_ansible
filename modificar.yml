@@ -6,6 +6,7 @@
      register: nombreprueba
      
  - hosts: localhost
-  - name: imprimir
-    debug: nombreprueba
+   tasks:
+   - name: imprimir
+      debug: nombreprueba
       msg: "{{ nombreprueba.[webservers}}}"
