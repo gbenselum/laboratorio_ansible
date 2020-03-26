@@ -4,10 +4,13 @@
      debug:
        msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
      register: thor
-     
-- hosts: localhost
-  tasks:
-   - name: imprimir en archivo
-     lineinfile:
-       path: /home/awx/new.webserver
-       line: "{{ thor }}"
+   - name: imprimir
+     debug: 
+       var: {{ thor }} 
+ 
+#- hosts: localhost
+#  tasks:
+#   - name: imprimir en archivo
+#     lineinfile:
+#       path: /home/awx/new.webserver
+#       line: "{{ thor }}"
