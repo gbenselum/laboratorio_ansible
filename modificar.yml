@@ -4,9 +4,8 @@
      debug:
        msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
        register: thor
- 
- 
- - hosts: localhost
+
+- hosts: localhost
   tasks:
    - name: imprimir
      debug:
