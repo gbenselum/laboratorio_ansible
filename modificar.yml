@@ -8,5 +8,5 @@
   
   - name: crear linea en haproxy
     debug:
-      msg: "{{ thor.stdout_lines }}" 
+      msg: "{{ thor.stdout }}" 
    
