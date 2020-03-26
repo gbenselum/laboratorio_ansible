@@ -1,4 +1,10 @@
 
+- hosts: webservers
+  tasks:
+  - name: crear linea en haproxy
+    debug:
+      msg: "saludame cabron"
+      
 - hosts: localhost
   tasks:
   - name: probar si sale
