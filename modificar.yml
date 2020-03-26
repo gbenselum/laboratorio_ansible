@@ -6,7 +6,7 @@
      register: thor
    - name: imprimir
      debug: 
-       var: "{{ thor }}"
+       var: "{{ thor.stdout_lines }}"
  
 #- hosts: localhost
 #  tasks:
