@@ -4,5 +4,8 @@
      debug:
        msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
      register: nombreprueba
- 
-   
+     
+ - hosts: localhost
+  - name: imprimir
+    debug: nombreprueba
+      msg: "{{ nombreprueba.[webservers}}}"
