@@ -10,4 +10,4 @@
    - name: imprimir en archivo
      lineinfile:
        path: /home/awx/new.webserver
-       line: "{{ nombreprueba.stdout }}"
+       line: "{{ nombreprueba.stdout_lines }}"
