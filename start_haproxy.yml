@@ -22,6 +22,13 @@
         group: root
         mode: '0644'
 
+- hosts: webservice
+  tasks:
+  - name: crear linea en haproxy
+    hosts: webservers
+    debug:
+      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
+
 
 - hosts: haproxycentos1
   gather_facts: no
