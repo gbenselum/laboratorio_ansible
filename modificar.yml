@@ -1,41 +1,26 @@
-#llamo a los webservers para tener el setup, sino no me responden a los hostvars
+
+---
 - hosts: webservers
+  become: yes
   tasks:
-  - name: crear linea en haproxy
+  - name: delegacion
     debug:
-      msg: "saludame cabron"
-      
-# Version 1 hace lo que quiero pero no sirve
-# versión original que no funciona porque register no permite guardar el string para usar con otro host
-#- hosts: webservers
-#  tasks:
-#  - name: crear linea en haproxy
-#    debug:
-#      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-#    register: thor
+      msg: "{{ ansible_host }} {{ansible_default_ipv4 }} "
+    delegate_to: HaproxyCentos1
+    delegate_facts: True
+    loop: "{{groups['webservers']}}"
 
-   
-# version 2 hace lo que quiero, pero con un HOST, falta el loop
-- hosts: localhost
+- hosts: HaproxyCentos1
   tasks:
-  - name: proba ssi sale
+  - name: echo variables
     debug:
-      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
-      
-      
-# el loop deberia ser algo asi, pero tampoco anda
-- hosts: webservers
-  tasks:
-  - name: pruebo una vez mas
-    msg: "{% for host in groups.webservers %} {{ hostvars['host.webserver']['ansible_hostname']}} {% endfor %}"
+      msg: " server {{ hostvars['Minionfedora1'].ansible_hostname }}   {{ hostvars['Minionfedora1'].ansible_default_ipv4.address }}   :80  "
 
-
-#- hosts: webservers
-#  tasks:
-#  - name: crear linea en haproxy
-#    debug:
+  - name: agregar linea en config
+    lineinfile:
+      path: /etc/haproxy/test.haproxy
+      line: " {{ item }} "
+    loop: "{{groups['webservers']}}"
+    
 #      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-#    register: thor
-
-
-
+$      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
