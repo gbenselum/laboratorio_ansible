@@ -15,10 +15,10 @@
       state: started
       
   - name: habilitar puerto 80 en el firewalld
-      firewalld:
-        service: http
-        permanent: yes
-        state: enabled
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
       
   - name: reiniciar firewalld para tomar cambios
     service:
