@@ -1,0 +1,5 @@
+ name: delegacion
+    setup:
+      delegate_to: HaproxyCentos1
+      delegate_facts: True
+      loop: "{{groups['webservers']}}"
