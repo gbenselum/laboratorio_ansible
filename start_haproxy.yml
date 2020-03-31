@@ -1,54 +1,24 @@
 ---
-    
-#
-#- hosts: localhost
-#  gather_facts: no
-#  tasks:
-#  - name: clonar el repo a local
-#    git:
-#      repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
-#      dest: /home/awx/repo
-#      clone: yes
-
-# - hosts: haproxycentos1
-#  gather_facts: no
-#  become: yes
-#  tasks:
-#    - name: Copy file with owner and permissions
-#      copy:
-#        src: /home/awx/repo/haproxy.cfg
-#        dest: /etc/haproxy/haproxy.conf
-#        owner: root
-#        group: root
-#        mode: '0644'
-
-- hosts: webservers
-  tasks:
-  - name: crear linea en haproxy
-    debug:
-      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-
 
 - hosts: haproxycentos1
   gather_facts: no
   tasks:
   - name: Instalar haproxy en el Host
-    package:
-       name: haproxy
-       state: present
+    yum:
+      name: haproxy
+      state: present
 
 
   - name: iniciar servicio haproxy
     systemd:
-       name: haproxy.service
-       state: started
+      name: haproxy.service
+      state: started
       
   - name: habilitar puerto 80 en el firewalld
-    
-    firewalld:
-      service: http
-      permanent: yes
-      state: enabled
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
       
   - name: reiniciar firewalld para tomar cambios
     service:
