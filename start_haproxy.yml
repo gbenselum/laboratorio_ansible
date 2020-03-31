@@ -1,26 +1,26 @@
 ---
     
+#
+#- hosts: localhost
+#  gather_facts: no
+#  tasks:
+#  - name: clonar el repo a local
+#    git:
+#      repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
+#      dest: /home/awx/repo
+#      clone: yes
 
-- hosts: localhost
-  gather_facts: no
-  tasks:
-  - name: clonar el repo a local
-    git:
-      repo: 'https://github.com/gbenselum/laboratorio_ansible.git'
-      dest: /home/awx/repo
-      clone: yes
-
-- hosts: haproxycentos1
-  gather_facts: no
-  become: yes
-  tasks:
-    - name: Copy file with owner and permissions
-      copy:
-        src: /home/awx/repo/haproxy.cfg
-        dest: /etc/haproxy/haproxy.conf
-        owner: root
-        group: root
-        mode: '0644'
+# - hosts: haproxycentos1
+#  gather_facts: no
+#  become: yes
+#  tasks:
+#    - name: Copy file with owner and permissions
+#      copy:
+#        src: /home/awx/repo/haproxy.cfg
+#        dest: /etc/haproxy/haproxy.conf
+#        owner: root
+#        group: root
+#        mode: '0644'
 
 - hosts: webservers
   tasks:
