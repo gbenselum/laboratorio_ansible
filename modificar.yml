@@ -23,4 +23,4 @@
     loop: "{{groups['webservers']}}"
     
 #      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-$      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
+#      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
