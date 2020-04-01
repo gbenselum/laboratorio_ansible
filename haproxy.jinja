@@ -1,5 +1,34 @@
-    #server minionfedora1 192.168.122.248:80 check
-    #server minioncentos1 192.168.122.67:80 check
-    server {{ var1 }} {{ var2 }}:80
-    server minionfedora1 192.168.122.248:80 check
-    server minioncentos1 192.168.122.67:80 check
+
+
+global
+        log /dev/log   local0
+        log 127.0.0.1   local1 notice
+        maxconn 4096
+        user haproxy
+        group haproxy
+        daemon
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        retries 3
+        option redispatch
+        maxconn 2000
+        contimeout     5000
+        clitimeout     50000
+        srvtimeout     50000
+
+listen webfarm 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    balance roundrobin
+    option httpclose
+    option forwardfor
+
+
+{% for servers in groups[webservers] %}
+        server hostvars[servers].ansible_hostname }}   {{ hostvars[servers].ansible_default_ipv4.address }}   :80      {% endif %}
+{% endfor %}
