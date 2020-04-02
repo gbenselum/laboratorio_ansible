@@ -1,26 +1,18 @@
-
 ---
 - hosts: webservers
   become: yes
   tasks:
   - name: delegacion
     debug:
-      msg: "{{ ansible_host }} {{ansible_default_ipv4 }} "
+      msg: "delegando facts de webservers a haproxycentos1 "
     delegate_to: HaproxyCentos1
     delegate_facts: True
     loop: "{{groups['webservers']}}"
 
 - hosts: HaproxyCentos1
   tasks:
-  - name: echo variables
-    debug:
-      msg: " server {{ hostvars['Minionfedora1'].ansible_hostname }}   {{ hostvars['Minionfedora1'].ansible_default_ipv4.address }}   :80  "
-
-  - name: agregar linea en config
-    lineinfile:
-      path: /etc/haproxy/test.haproxy
-      line: " {{ item }} "
-    loop: "{{groups['webservers']}}"
-    
-#      msg: "server {{ ansible_hostname }} {{ ansible_default_ipv4.network }}:80 check" 
-#      msg: "server  {{ hostvars['minioncentos1']['ansible_facts']['hostname'] }} {{ hostvars['minioncentos1']['ansible_facts']['default_ipv4']['address'] }}:80"
+  - name: creacion del archivo de configuracion en base al template jinja
+    template:
+      src: haproxy.jinja2
+      dest: /etc/haproxy/haproxy.cfg
+...
