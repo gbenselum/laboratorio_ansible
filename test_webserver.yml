@@ -1,19 +1,19 @@
 - hosts: minioncentos1
-  gather_facts: no
+#  gather_facts: no
   tasks:
       - name: prueba server centos
         uri:
             url: http://minioncentos1
 
 - hosts: Minionfedora1
-  gather_facts: no
+#  gather_facts: no
   tasks:
       - name: prueba server fedora
         uri:
             url: http://Minionfedora1
 
 - hosts: haproxycentos1
-  gather_facts: no
+#  gather_facts: no
   tasks:
       - name: prueba haproxy
         uri:
