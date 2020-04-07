@@ -19,7 +19,7 @@
       name: haproxy
       state: present
 
-- hosts: HaproxyCentos1
+- hosts: haproxycentos1
   tasks:
   - name: creacion del archivo de configuracion en base al template jinja
     template:
