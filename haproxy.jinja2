@@ -30,5 +30,5 @@ listen webfarm 0.0.0.0:80
 
 
 {% for servers in groups['webservers'] %}
-server {{ hostvars[servers].ansible_hostname }} {{ hostvars[servers].ansible_default_ipv4.address }}:80 check
+    server {{ hostvars[servers].ansible_hostname }} {{ hostvars[servers].ansible_default_ipv4.address }}:80 check
 {% endfor %}
