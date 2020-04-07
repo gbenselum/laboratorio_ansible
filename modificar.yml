@@ -9,10 +9,56 @@
     delegate_facts: True
     loop: "{{groups['webservers']}}"
 
+
+
+- hosts: haproxycentos1
+  gather_facts: no
+  tasks:
+  - name: Instalar haproxy en el Host
+    yum:
+      name: haproxy
+      state: present
+
 - hosts: HaproxyCentos1
   tasks:
   - name: creacion del archivo de configuracion en base al template jinja
     template:
       src: haproxy.jinja2
       dest: /etc/haproxy/haproxy.cfg
+
+
+  - name: iniciar servicio haproxy
+    systemd:
+      name: haproxy.service
+      state: started
+      
+  - name: habilitar puerto 80 en el firewalld
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+      
+  - name: reiniciar firewalld para tomar cambios
+    service:
+      name: firewalld
+      state: restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ...
