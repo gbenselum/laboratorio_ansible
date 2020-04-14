@@ -13,4 +13,5 @@
         telegram:
           token: '789814150:AAE86c3jBVW5v2EQ2uEIZhZ_vxKIIhYXt0U'
           chat_id: 519410943
-          msg: Ansible task finished fallando a las {{ansible_date_time.date}}
+          msg: "Ansible {{ tower_workflow_job_name }}  falló a las {{ansible_date_time.date}} con el error {{ any_errors_fatal }}"
+
