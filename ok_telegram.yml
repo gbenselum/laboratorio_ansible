@@ -12,4 +12,4 @@
         telegram:
           token: '789814150:AAE86c3jBVW5v2EQ2uEIZhZ_vxKIIhYXt0U'
           chat_id: 519410943
-          msg: " {{ tower_workflow_job_name }} ID {{ tower_workflow_job_id }} Finalizó Satisfactoriamente el {{ansible_date_time.date}} por el usuario {{ tower_user_name }} "
+          msg: " El lanzamiento {{ tower_workflow_job_name }} ID {{ tower_workflow_job_id }} Finalizó Satisfactoriamente el {{ansible_date_time.date}} por el usuario {{ tower_user_name }} "
