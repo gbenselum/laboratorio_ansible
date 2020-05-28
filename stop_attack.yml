@@ -8,3 +8,11 @@
         proto: all
         src: {var_ipadd}
         comment: bloqueo IP {var_ipadd} definido por regla ansible
+
+#- hosts: redhat
+#  gather_facts: no
+#  tasks:
+#    - name: se bloquea desde variable la IP "{var_ipadd}" Red Hat Family
+#      firewalld:
+#      
+#  firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.0.11' reject"
