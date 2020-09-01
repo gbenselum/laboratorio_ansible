@@ -1,5 +1,7 @@
 # laboratorio_ansible
+Deprecando.
 
+En proceso de migrar al workshop.
 
 Este Github incluye los playbooks de demostración  de Ansible Tower.
 
